@@ -16,8 +16,8 @@ function parseBMI(bmi){
 let parsedToSrc = {
     "wygłodzenie": "wyglodzenie.png",
     "wychudzenie": "wychudzenie.png",
-    "niedowaga": "niedowaga.jpg",
-    "prawidłowa": "prawidlowa.png",
+    "niedowaga"  : "niedowaga.jpg",
+    "prawidłowa" : "prawidlowa.png",
     "nadwaga"    : "nadwaga.png",
     "otyłość"    : "otylosc.png"
 }
