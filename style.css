@@ -1,13 +1,69 @@
+
+/* Animations */
 @keyframes headerAnim {
-    0% {}
+    0% {
+        color: rgba(255,255,255,0%);
+        font-size: 0%;
+    }
+    25% {
+        color: rgba(255,255,255,100%);
+        font-size: 5rem;
+    }
+    75% {
+        color: rgba(255,255,255,100%);
+        font-size: 5rem;
+        top: 50%;
+    }
+    100%{
+        top: 2%;
+        color: rgba(255,255,255,100%);
+        font-size: 2rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        color: rgba(255,255,255,0%);
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100%{
+        color: rgba(255,255,255,100%);
+        transform: translateY(-10%);
+        opacity: 1;
+    }
+}
+
+/* Header */
+header{
+    font-family: 'Open Sans', sans-serif;
+    animation: headerAnim 2s cubic-bezier(.68,-0.55,.35,1.35) .5s 1 normal forwards;
+    
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 50%;
+
+    color: rgba(255,255,255,0%);
+    font-size: 0%;
+}
+
+div.header-highlight {
+	background: linear-gradient(180deg, #1f1e33 0%, #00000000 100%);
+	position: absolute;
+	width: 100vw;
+	height: 5em;
+	z-index: -1;
+    
 }
 
 body{
     overflow: hidden;
     height: 100vh;
+    margin: 0;
 
     background: rgb(28,28,28);
-    background-image: radial-gradient(circle at bottom right, rgb(28, 28, 28) 0%, rgb(32, 32, 32) 35%, rgb(42, 42, 42) 100%);
+    background-image: radial-gradient(circle at bottom right, #191829 0%, #1f1e33 100%);
 
 }
 
@@ -17,30 +73,122 @@ form{
     position: absolute;
     transform: translate(-50%, -50%);
     background: none;
+    transition: .75s;
+}
+
+/* Number input */
+
+input{
+    box-shadow: 10px 10px 5px #181727;
+    position: inherit;
+    display: flex;
+    animation: fadeIn 1s ease 2.7s 1 normal forwards;
+    opacity: 0;
+}
+
+div.input-wrapper{
+    background: none;
+    margin: 15% 0;
 }
 
 input[type="number"]{
     font-size: 1.2em;
-    display: flex;
-    margin: 15% 0;
-    width: 50%;
+    
+    
+    width: 100%;
     padding: 10px;
     color: rgb(255, 255, 255);
 
-    transform: translateX(25%);
+    transform: translateY(50%);
+    opacity: 0;
 
-    border-radius: 20px;
+    transition: .2s;
+    border: none;
+
+    border-radius: 25px;
     
-    background: rgba(41, 41, 41, 0.705);
+    background: rgba(41, 41, 41, 30%);
 
     -moz-appearance: textfield;
 
-    border-color: linear-gradient(135deg, rgba(104,11,194,1) 0%, rgba(80,15,212,1) 35%, rgba(27,62,167,1) 100%);
+}
 
+input[type="number"]:focus{
+    background: linear-gradient(4deg, rgba(8, 0, 48, 0.5) 0%, rgba(99, 99, 99, 0.5) 100%);
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* Button */
+
+input[type="button"]{
+    
+    width: 100%;
+
+    font-size: 1.2em;
+    color: #fff;
+    font-family: "Open Sans";
+
+    background: rgb(164,0,139);
+    background: linear-gradient(37deg, rgba(164,0,139,1) 0%, rgba(205,31,241,98%) 30%, rgba(21,78,176,1) 100%);
+
+    padding: 5%;
+
+    transition: .2s;
+    
+    border: none;
+    border-radius: 25px;
+}
+
+input[type="button"]:hover{
+    font-size: 1.3em;
+}
+
+input[type="button"]:active{
+    font-size: 1.1em;
+}
+
+
+/* Results */
+
+#results{
+    height: fit-content;
+    left: 50vw;
+    bottom: 40%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: none;
+}
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25em;
+    color: #00000000;
+
+    /*animation: fadeIn 1 ease 0s 1 normal forwards;*/
+}
+
+@keyframes imageShow {
+    0% {
+        bottom: -100vh;
+    }
+
+    100%{
+        bottom: -12vh;
+    }
+}
+
+img{
+    border-radius: 25px;
+
+    box-shadow: 10px 10px 5px #0e0d16;
+    max-height: 30vh;
+    left: 50vw;
+    bottom: -100vh;
+    position: absolute;
+    transform: translate(-50%, -50%);
 }

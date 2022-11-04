@@ -3,12 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" /> 
+
+    <script defer src="script.js"></script>
+
     <title>Kalkulator BMI</title>
 </head>
 <body>
+    <div class="header-highlight"></div>
+    <header>Kalkulator BMI</header>
     <form id="calculator">
-        <input type="number" placeholder="Podaj wagę (kg)" step="any" min="0" name="weight" id="weight" />
-        <input type="number" placeholder="Podaj wysokość (cm)" step="any" min="0" name="height" id="height" />
+        <div class="input-wrapper"><input type="number" placeholder="Podaj wagę (kg)" step="any" min="0" name="weight" id="weight" /></div>
+        <div class="input-wrapper"><input type="number" placeholder="Podaj wysokość (cm)" step="any" min="0" name="height" id="height" /></div>
+        <input type="button" value="Oblicz" onclick="buttonOnClick()" />
     </form>
+
+    <div id="results">
+        <p id="resultBMI"></p>
+        <p id="resultInterpreted"></p>
+    </div>
+
+    <img alt="" id="img" />
 </body>
 </html>
