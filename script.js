@@ -61,7 +61,8 @@ let headerTexts = [
     "Bardzo Mocne Igły",
     "Bydgoszcz: Miasto Idiotów",
     "Bardzo Mięsny Iławianin",
-    "Babcia Ma Imprezę"
+    "Babcia Ma Imprezę",
+    "Bardzo Masywne Iaja"
 ]
 
 function changeHeader() {
