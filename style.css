@@ -191,4 +191,5 @@ img{
     bottom: -100vh;
     position: absolute;
     transform: translate(-50%, -50%);
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .2s;
 }
