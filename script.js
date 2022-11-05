@@ -32,20 +32,38 @@ function showResults(bmi){
     numOut.innerHTML = `Twoje BMI to: ${bmi.toFixed(1)}`;
     interpretOut.innerHTML = `Interpretacja: ${parsed}`;
 
-    numOut.style.animation = "fadeIn 1s ease 1s 1 normal forwards";
-    interpretOut.style.animation = "fadeIn 1s ease 1s 1 normal forwards";
+    numOut.style.animation = null;
+    interpretOut.style.animation = null;
+    setTimeout(() => {
+        numOut.style.animation = "fadeIn 1s ease 0s 1 normal forwards";
+        interpretOut.style.animation = "fadeIn 1s ease 0s 1 normal forwards";
+    }, 1000);
     form.style.top = "25%";
 
+    imageOut.style.animation = null;
+    imageOut.style.bottom = '-100vh';
     imageOut.src = parsedToSrc[parsed];
-    imageOut.style.animation = "imageShow 1s cubic-bezier(.68,-0.55,.35,1.35) 0s 1 normal forwards";
+    setTimeout(function(){
+        imageOut.style.animation = "imageShow 1.5s cubic-bezier(.68,-0.55,.35,1.35) 0s 1 normal forwards";
+    }, 300);
 }
 
 function buttonOnClick(){
-    console.log("on click")
     let weight = form.weight.value;
     let height = form.height.value/100;
 
     let bmi = calculateBMI(weight, height);
 
     showResults(bmi);
+}
+
+let headerTexts = [
+    "Bardzo Mocne Igły",
+    "Bydgoszcz: Miasto Idiotów",
+    "Bardzo Mięsny Iławianin",
+    "Babcia Ma Imprezę"
+]
+
+function changeHeader(){
+    document.getElementById('header').innerHTML=headerTexts[Math.floor(Math.random()*headerTexts.length)];
 }
