@@ -69,11 +69,14 @@ body{
 
 form{
     left: 50vw;
-    top: 40%;
+    top: 40vh;
     position: absolute;
     transform: translate(-50%, -50%);
     background: none;
     transition: .75s;
+    height: 25vh;
+    width: auto;
+    
 }
 
 /* Number input */
@@ -126,8 +129,9 @@ input::-webkit-inner-spin-button {
 /* Button */
 
 input[type="button"]{
-    
     width: 100%;
+
+
 
     font-size: 1.2em;
     color: #fff;
@@ -144,11 +148,21 @@ input[type="button"]{
     border-radius: 25px;
 }
 
-input[type="button"]:hover{
+input[type="button"]:disabled{
+    position: relative;
+    font-size: 1.1em;
+    padding: 3%;
+    width: 90%;
+    transform: translateX(10%);
+    color: rgb(48, 48, 48);
+    background: linear-gradient(4deg, rgba(66,0,56,1) 0%, rgba(71,12,83,0.98) 30%, rgba(9,32,73,1) 100%);    
+}
+
+input[type="button"]:hover:enabled{
     font-size: 1.3em;
 }
 
-input[type="button"]:active{
+input[type="button"]:active:enabled{
     font-size: 1.1em;
 }
 
@@ -158,7 +172,7 @@ input[type="button"]:active{
 #results{
     height: fit-content;
     left: 50vw;
-    bottom: 40%;
+    bottom: 40vh;
     position: absolute;
     transform: translate(-50%, -50%);
     background: none;
@@ -186,7 +200,7 @@ img{
     border-radius: 25px;
 
     box-shadow: 10px 10px 5px #0e0d16;
-    max-height: 30vh;
+    max-height: 35vh;
     left: 50vw;
     bottom: -100vh;
     position: absolute;

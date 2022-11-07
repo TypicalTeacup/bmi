@@ -16,9 +16,9 @@
     <div class="header-highlight"></div>
     <header id="header" onclick="changeHeader()">Kalkulator BMI</header>
     <form id="calculator">
-        <div class="input-wrapper"><input type="number" min="0" placeholder="Podaj wagę (kg)" step="any" min="0" name="weight" id="weight" /></div>
-        <div class="input-wrapper"><input type="number" min="1" placeholder="Podaj wysokość (cm)" step="any" min="0" name="height" id="height" /></div>
-        <input type="button" value="Oblicz" onclick="buttonOnClick()" />
+        <div class="input-wrapper"><input type="number" placeholder="Podaj wagę (kg)" step="any" min="0" name="weight" id="weight" onchange="checkInput()" /></div>
+        <div class="input-wrapper"><input type="number" placeholder="Podaj wysokość (cm)" step="any" min="0" name="height" id="height" onchange="checkInput()" /></div>
+        <input type="button" value="Oblicz" id="calcButton" onclick="buttonOnClick()" disabled />
     </form>
 
     <div id="results">

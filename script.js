@@ -3,6 +3,7 @@ let numOut = document.getElementById('resultBMI');
 let interpretOut = document.getElementById('resultInterpreted');
 let resultsDiv = document.getElementById('results');
 let imageOut = document.getElementById('img');
+let button = document.getElementById('calcButton');
 
 function parseBMI(bmi) {
     return bmi < 16.5 ? "wygłodzenie" :
@@ -44,9 +45,15 @@ function showResults(bmi) {
     imageOut.style.bottom = '-100vh';
     imageOut.src = parsedToSrc[parsed];
     setTimeout(function () {
-        imageOut.style.animation = "imageShow 1.5s cubic-bezier(.68,-0.55,.35,1.35) 0s 1 normal forwards";
+        imageOut.style.animation = "imageShow .8s cubic-bezier(.68,-0.55,.35,1.35) 0s 1 normal forwards";
     }, 300);
 }
+
+function checkInput(){
+    button.disabled = (form.weight.value < 0 || form.height.value <= 0);
+}
+
+
 
 function buttonOnClick() {
     let weight = form.weight.value;
@@ -66,6 +73,8 @@ let headerTexts = [
     "Boski Mediator Imperialny"
 ]
 
+
+
 function changeHeader() {
-    document.getElementById('header').innerHTML = headerTexts[Math.floor(Math.random() * headerTexts.length)];
+    document.getElementById('header').innerHTML = `Kalkulator BMI (${headerTexts[Math.floor(Math.random() * headerTexts.length)]})`;
 }
